@@ -5,8 +5,10 @@ import plotly.express as px
 # Load the dataset
 @st.cache_data
 def load_data():
-    file_path = "gp-search-20250302-213502.csv"  # Update if needed
-    return pd.read_csv(file_path)
+    file_path = "gp-search-20250302-213502.csv"  # Ensure this is the correct path
+    df = pd.read_csv(file_path)
+    st.write("Column Names in CSV:", df.columns.tolist())  # Debugging
+    return df
 
 df = load_data()
 
